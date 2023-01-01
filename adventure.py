@@ -1,4 +1,5 @@
-from locations import locations
+from world import locations
+from go import go
 import snarky_replies
 import keywords
 
@@ -39,6 +40,7 @@ print_help()
 
 location_name = "main_entry"
 current_location = locations["main_entry"]
+inventory = []
 show_new_location_info = True
 
 while True:
@@ -65,23 +67,24 @@ while True:
     # ---- GO action ------------------------------------------------
     if action == keywords.Action.GO:
 
-        direction = command[1]
-        if direction not in keywords.allowed_directions:
-            snarky_replies.print_snarky_reply_bad_direction_name()
-            continue
+        # direction = command[1]
+        # if direction not in keywords.allowed_directions:
+        #     snarky_replies.print_snarky_reply_bad_direction_name()
+        #     continue
+        #
+        # if direction not in current_location:
+        #     snarky_replies.print_snarky_reply_bad_direction()
+        #     continue
+        #
+        # new_location = current_location[direction]
+        # if new_location not in locations:
+        #     snarky_replies.print_snarky_reply_bad_world(new_location)
+        #     continue
+        #
+        # current_location = locations[new_location]
+        # show_new_location_info = True
 
-        if direction not in current_location:
-            snarky_replies.print_snarky_reply_bad_direction()
-            continue
-
-        new_location = current_location[direction]
-        if new_location not in locations:
-            snarky_replies.print_snarky_reply_bad_world(new_location)
-            continue
-
-        current_location = locations[new_location]
-        show_new_location_info = True
-
+        show_new_location_info, current_location = go(current_location, command)
         continue
 
     # ---- LOOK action ------------------------------------------------
