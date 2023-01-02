@@ -13,3 +13,11 @@ def print_snarky_reply_bad_direction():
 def print_snarky_reply_bad_world(location):
     print("looks like the designer of this adventure world is a moron!")
     print(f"... because there is no location named: {location}")
+
+
+def print_snarky_reply_bad_look_command():
+    print(f"Huh? You slap your forehead and ask 'How could I write my command so poorly??!'")
+
+
+def print_snarky_reply_dont_have_item(item):
+    print(f"Hmm. I don't see {item} in your inventory or in the current location.")

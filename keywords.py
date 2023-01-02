@@ -11,6 +11,8 @@ class Direction:
     SOUTH = "south"
     EAST = "east"
     WEST = "west"
+    UP = "up"
+    DOWN = "down"
 
 
 class Location:
@@ -28,12 +30,39 @@ class Location:
 
 
 class LocationKey:
-    DESCRIPTION = "description"
-    LOOK = "look"
     WEST = Direction.WEST
     EAST = Direction.EAST
     NORTH = Direction.NORTH
     SOUTH = Direction.SOUTH
+
+
+class Item:
+    MAP = "map"
+    COMPASS = "compass"
+    KNIFE = "knife"
+    DICTIONARY = "dictionary"
+    ANDROID_PHONE = "android-phone"
+    IPHONE = "iphone"
+    BALL = "ball"
+    SCREWDRIVER = "screwdriver"
+    LAPTOP = "laptop"
+    LAPTOP_POWER_CABLE = "laptop-power-cable"
+    GLOBE = "globe"
+    RULER = "ruler"
+    PENCIL = "pencil"
+    SOCCER_BALL = "soccer-ball"
+    FOOTBALL = "football"
+    FRISBEE = "frisbee"
+    BAXTER = "baxter-the-dog"
+    PESTO = "pesto-the-dog"
+    BUDDY = "buddy-the-cat"
+
+
+class General:
+    AT = "at"
+    DESCRIPTION = "description"
+    ITEMS = "items"
+    LOOK = "look"
 
 
 allowed_actions = [Action.GO, Action.TAKE, Action.LEAVE, Action.USE, Action.LOOK]

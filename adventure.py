@@ -1,5 +1,6 @@
 from world import locations
 from go import go
+from look import look, print_location_info
 import snarky_replies
 import keywords
 
@@ -19,13 +20,6 @@ def print_help():
     print(f"         {keywords.Action.LEAVE}: <name of item being left>")
     print(f"         {keywords.Action.USE}: <name of item being used>")
     print("Enjoy, and good luck!")
-    print("--------------------\n")
-
-
-def print_location_info(location):
-
-    print("\n--------------------")
-    print(location["description"])
     print("--------------------\n")
 
 
@@ -67,30 +61,13 @@ while True:
     # ---- GO action ------------------------------------------------
     if action == keywords.Action.GO:
 
-        # direction = command[1]
-        # if direction not in keywords.allowed_directions:
-        #     snarky_replies.print_snarky_reply_bad_direction_name()
-        #     continue
-        #
-        # if direction not in current_location:
-        #     snarky_replies.print_snarky_reply_bad_direction()
-        #     continue
-        #
-        # new_location = current_location[direction]
-        # if new_location not in locations:
-        #     snarky_replies.print_snarky_reply_bad_world(new_location)
-        #     continue
-        #
-        # current_location = locations[new_location]
-        # show_new_location_info = True
-
         show_new_location_info, current_location = go(current_location, command)
         continue
 
     # ---- LOOK action ------------------------------------------------
     elif action == keywords.Action.LOOK:
 
-        print_look_info(current_location)
+        look(current_location, command, inventory)
 
     else:
         print(f"sorry it seems the developer has not implemented the action {action} yet!")
