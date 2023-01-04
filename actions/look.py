@@ -1,6 +1,5 @@
 import keywords
 import snarky_replies
-import world
 
 
 def print_location_info(location):

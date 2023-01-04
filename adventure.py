@@ -1,4 +1,4 @@
-from world import locations
+from world.locations import locations
 from actions.go import go
 from actions.look import look, print_location_info
 from actions.show import show_inventory

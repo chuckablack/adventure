@@ -1,6 +1,5 @@
 import keywords
 import snarky_replies
-import world
 
 
 def take(current_location, command, inventory):

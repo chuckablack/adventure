@@ -1,4 +1,4 @@
-from world import locations
+from world.locations import locations
 import snarky_replies
 import keywords
 
