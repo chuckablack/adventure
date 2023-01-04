@@ -4,6 +4,19 @@ class Action:
     LEAVE = "leave"
     USE = "use"
     LOOK = "look"
+    SHOW = "show"
+    SPIN = "spin"
+    PLAY = "play"
+    READ = "read"
+    THROW = "throw"
+    CALL = "call"
+    TYPE = "type"
+    KICK = "kick"
+    PLUG_IN = "plug in"
+    WRITE = "write"
+    MEASURE = "measure"
+    UNSCREW = "unscrew"
+    FEED = "feed"
 
 
 class Direction:
@@ -63,7 +76,12 @@ class General:
     DESCRIPTION = "description"
     ITEMS = "items"
     LOOK = "look"
+    INVENTORY = "inventory"
+    HEALTH = "health"
+    POWER = "power"
+    KNOWLEDGE = "knowledge"
+    MAGIC = "magic"
 
 
-allowed_actions = [Action.GO, Action.TAKE, Action.LEAVE, Action.USE, Action.LOOK]
+allowed_actions = [Action.GO, Action.TAKE, Action.LEAVE, Action.USE, Action.LOOK, Action.SHOW]
 allowed_directions = [Direction.NORTH, Direction.SOUTH, Direction.EAST, Direction.WEST]

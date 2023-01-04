@@ -21,3 +21,7 @@ def print_snarky_reply_bad_look_command():
 
 def print_snarky_reply_dont_have_item(item):
     print(f"Hmm. I don't see {item} in your inventory or in the current location.")
+
+
+def print_snarky_reply_no_such_item(item):
+    print(f"That's funny, I don't see {item} anywhere in this location.")

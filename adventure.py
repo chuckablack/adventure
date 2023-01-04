@@ -1,6 +1,8 @@
 from world import locations
-from go import go
-from look import look, print_location_info
+from actions.go import go
+from actions.look import look, print_location_info
+from actions.show import show_inventory
+from take import take
 import snarky_replies
 import keywords
 
@@ -34,7 +36,7 @@ print_help()
 
 location_name = "main_entry"
 current_location = locations["main_entry"]
-inventory = []
+inventory = {}
 show_new_location_info = True
 
 while True:
@@ -60,14 +62,21 @@ while True:
 
     # ---- GO action ------------------------------------------------
     if action == keywords.Action.GO:
-
         show_new_location_info, current_location = go(current_location, command)
         continue
 
     # ---- LOOK action ------------------------------------------------
     elif action == keywords.Action.LOOK:
-
         look(current_location, command, inventory)
+
+    # ----- TAKE action -----------------------------------------------
+    elif action == keywords.Action.TAKE:
+        take(current_location, command, inventory)
+
+    # ----- SHOW action -----------------------------------------------
+    elif action == keywords.Action.SHOW:
+        if len(command) > 1 and command[1] == keywords.General.INVENTORY:
+            show_inventory(inventory)
 
     else:
         print(f"sorry it seems the developer has not implemented the action {action} yet!")
