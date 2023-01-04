@@ -1,4 +1,5 @@
 from world.locations import locations
+from world.areas import areas
 from replies import snarky_replies
 import keywords
 
@@ -16,9 +17,15 @@ def go(current_location, command):
             snarky_replies.print_snarky_reply_bad_go_to_area()
             return False, current_location
 
-        area = command[2]
-        new_location = world.areas[area][keywords.General.DEFAULT_LOCATION]
+        area_name = command[2]
+        new_location = areas[area_name][keywords.General.DEFAULT_LOCATION]
+        if new_location not in locations:
+            snarky_replies.print_snarky_reply_bad_world(new_location)
+            return False, current_location
 
+        return True, locations[new_location]
+
+    # ----- Handle 'go <direction>' -----------------------------------
     direction = command[1]
     if direction not in keywords.allowed_directions:
         snarky_replies.print_snarky_reply_bad_direction_name()

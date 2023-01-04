@@ -64,6 +64,7 @@ items = {
 
 locations = {
 
+    # ----- Schoolhouse -----------------------------------------------
     Location.SCHOOLHOUSE_ENTRY: {
         General.DESCRIPTION: "You stand at the main entry to the schoolhouse. \n" +
                              "You are hoping for something interesting to happen in this game, \n" +
@@ -162,29 +163,31 @@ locations = {
         LocationKey.SOUTH: Location.EAST_HALLWAY,
     },
 
+    # ----- Mountains -------------------------------------------------
     Location.MOUNTAINS_ENTRY: {
         General.DESCRIPTION: "You stand at the main entry to the mountains. \n" +
                              "You feel small and insignificant as sheer cliff faces tower before you, \n"
-                             "but you notice a cleft that you might be able to fit through."
+                             "but you notice a cleft that you might be able to fit through.",
         General.LOOK: "To the east, you see the cleft in the mountains that you might be able to sneak through.",
         General.ITEMS: {Item.MAP: items[Item.MAP]},
         LocationKey.NORTH: Location.FOYER,
     },
 
+    # ----- Forest ----------------------------------------------------
     Location.FOREST_ENTRY: {
-        General.DESCRIPTION: "You stand at the main entry to the schoolhouse. " +
-                             "You are hoping for something interesting to happen in this game, " +
-                             "but knowing the developer, your hopes are not high.",
-        General.LOOK: "To the north, you see the entryway to the school that leads into the foyer",
+        General.DESCRIPTION: "You stand at the foot of a huge forest. " +
+                             "Most of the huge behemoths before you are evergreen, redwoods and pine mostly, " +
+                             "but through the branches you think you spot a silver, glimmering tree.",
+        General.LOOK: "To the north, you see the path into the forest",
         General.ITEMS: {Item.MAP: items[Item.MAP]},
         LocationKey.NORTH: Location.FOYER,
     },
 
+    # ----- City ------------------------------------------------------
     Location.CITY_ENTRY: {
-        General.DESCRIPTION: "You stand at the main entry to the schoolhouse. " +
-                             "You are hoping for something interesting to happen in this game, " +
-                             "but knowing the developer, your hopes are not high.",
-        General.LOOK: "To the north, you see the entryway to the school that leads into the foyer",
+        General.DESCRIPTION: "You stand at the main street which leads through the old-fashioned city before you. " +
+                             "You see a cafe, a motel, a hardware store, and of course, a Starbucks. ",
+        General.LOOK: "To the north you see the street leading into the city.",
         General.ITEMS: {Item.MAP: items[Item.MAP]},
         LocationKey.NORTH: Location.FOYER,
     },

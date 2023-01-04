@@ -2,6 +2,7 @@ from keywords import Area, General
 from world.locations import Location
 
 areas = {
+
     Area.FOREST: {
         General.DEFAULT_LOCATION: Location.FOREST_ENTRY,
     },
