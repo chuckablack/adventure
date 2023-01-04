@@ -19,6 +19,13 @@ class Action:
     FEED = "feed"
 
 
+class Area:
+    FOREST = "forest"
+    SCHOOLHOUSE = "schoolhouse"
+    MOUNTAINS = "mountains"
+    CITY = "city"
+
+
 class Direction:
     NORTH = "north"
     SOUTH = "south"
@@ -29,7 +36,8 @@ class Direction:
 
 
 class Location:
-    MAIN_ENTRY = "main_entry"
+
+    SCHOOLHOUSE_ENTRY = "main_entry"
     FOYER = "foyer"
     WEST_ENTRY = "west_entry"
     EAST_ENTRY = "east_entry"
@@ -40,6 +48,12 @@ class Location:
     CLASSROOM_SCIENCE = "classroom_science"
     CLASSROOM_MATH = "classroom_math"
     CLASSROOM_ACCOUNTING = "classroom_accounting"
+
+    FOREST_ENTRY = "forest-entry"
+
+    CITY_ENTRY = "city-entry"
+
+    MOUNTAINS_ENTRY = "mountains-entry"
 
 
 class LocationKey:
@@ -73,6 +87,7 @@ class Item:
 
 class General:
     AT = "at"
+    TO = "to"
     DESCRIPTION = "description"
     ITEMS = "items"
     LOOK = "look"
@@ -81,7 +96,9 @@ class General:
     POWER = "power"
     KNOWLEDGE = "knowledge"
     MAGIC = "magic"
+    DEFAULT_LOCATION = "default-location"
 
 
 allowed_actions = [Action.GO, Action.TAKE, Action.LEAVE, Action.USE, Action.LOOK, Action.SHOW]
 allowed_directions = [Direction.NORTH, Direction.SOUTH, Direction.EAST, Direction.WEST]
+allowed_areas = [Area.FOREST, Area.CITY, Area.MOUNTAINS, Area.SCHOOLHOUSE]

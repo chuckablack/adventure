@@ -63,16 +63,17 @@ items = {
 }
 
 locations = {
-    Location.MAIN_ENTRY: {
-        General.DESCRIPTION: "You stand at the main entry to the schoolhouse. " +
-                             "You are hoping for something interesting to happen in this game, " +
+
+    Location.SCHOOLHOUSE_ENTRY: {
+        General.DESCRIPTION: "You stand at the main entry to the schoolhouse. \n" +
+                             "You are hoping for something interesting to happen in this game, \n" +
                              "but knowing the developer, your hopes are not high.",
         General.LOOK: "To the north, you see the entryway to the school that leads into the foyer",
         General.ITEMS: {Item.MAP: items[Item.MAP]},
         LocationKey.NORTH: Location.FOYER,
     },
     Location.FOYER: {
-        General.DESCRIPTION: "You are in the foyer. " +
+        General.DESCRIPTION: "You are in the foyer. \n" +
                              "... and find yourself wondering, what the <bleep> is a 'foyer', anyway?!",
         General.LOOK: "To the north leads outside to the back on the school.\n" +
                       "To the west and east are hallways leading to classrooms.\n" +
@@ -81,7 +82,7 @@ locations = {
                         Item.ANDROID_PHONE: items[Item.ANDROID_PHONE]},
         LocationKey.NORTH: Location.BACK_ENTRY,
         LocationKey.WEST: Location.WEST_HALLWAY,
-        LocationKey.SOUTH: Location.MAIN_ENTRY,
+        LocationKey.SOUTH: Location.SCHOOLHOUSE_ENTRY,
         LocationKey.EAST: Location.EAST_HALLWAY,
     },
     Location.WEST_ENTRY: {
@@ -104,7 +105,7 @@ locations = {
         LocationKey.SOUTH: Location.FOYER,
     },
     Location.WEST_HALLWAY: {
-        General.DESCRIPTION: "You are in a hallway, with lockers on the walls," +
+        General.DESCRIPTION: "You are in a hallway, with lockers on the walls,\n" +
                              "and doors to classrooms on either side.",
         General.LOOK: "To the north is the science classroom.\n" +
                       "To the south is the math classroom.\n" +
@@ -160,4 +161,32 @@ locations = {
         General.ITEMS: {},
         LocationKey.SOUTH: Location.EAST_HALLWAY,
     },
+
+    Location.MOUNTAINS_ENTRY: {
+        General.DESCRIPTION: "You stand at the main entry to the mountains. \n" +
+                             "You feel small and insignificant as sheer cliff faces tower before you, \n"
+                             "but you notice a cleft that you might be able to fit through."
+        General.LOOK: "To the east, you see the cleft in the mountains that you might be able to sneak through.",
+        General.ITEMS: {Item.MAP: items[Item.MAP]},
+        LocationKey.NORTH: Location.FOYER,
+    },
+
+    Location.FOREST_ENTRY: {
+        General.DESCRIPTION: "You stand at the main entry to the schoolhouse. " +
+                             "You are hoping for something interesting to happen in this game, " +
+                             "but knowing the developer, your hopes are not high.",
+        General.LOOK: "To the north, you see the entryway to the school that leads into the foyer",
+        General.ITEMS: {Item.MAP: items[Item.MAP]},
+        LocationKey.NORTH: Location.FOYER,
+    },
+
+    Location.CITY_ENTRY: {
+        General.DESCRIPTION: "You stand at the main entry to the schoolhouse. " +
+                             "You are hoping for something interesting to happen in this game, " +
+                             "but knowing the developer, your hopes are not high.",
+        General.LOOK: "To the north, you see the entryway to the school that leads into the foyer",
+        General.ITEMS: {Item.MAP: items[Item.MAP]},
+        LocationKey.NORTH: Location.FOYER,
+    },
+
 }

@@ -1,13 +1,20 @@
+import keywords
+
+
 def print_snarky_reply_bad_action():
-    print("legal commands begin with 'go', 'take', 'put', or 'use'")
+    print(f"legal command actions begin with one of the following: {keywords.allowed_actions}")
 
 
 def print_snarky_reply_bad_direction_name():
-    print("legal directions are 'north', 'south', 'east', 'west'")
+    print(f"legal directions are one of the following: {keywords.allowed_directions}")
 
 
 def print_snarky_reply_bad_direction():
     print("Ouch! You bump into a wall and bruise your nose.")
+
+
+def print_snarky_reply_bad_go_to_area():
+    print(f"Whoops - you are only allow to 'go to' these areas: {keywords.allowed_areas}")
 
 
 def print_snarky_reply_bad_world(location):

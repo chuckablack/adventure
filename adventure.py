@@ -3,7 +3,7 @@ from actions.go import go
 from actions.look import look, print_location_info
 from actions.show import show_inventory
 from take import take
-import snarky_replies
+from replies import snarky_replies
 import keywords
 
 
