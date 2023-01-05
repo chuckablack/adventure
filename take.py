@@ -12,3 +12,5 @@ def take(current_location, command, inventory):
     item = current_location[keywords.General.ITEMS][item_name]
     inventory[item_name] = item
     del current_location[keywords.General.ITEMS][item_name]
+
+    print(f"\n---> you take the {item_name} and it is added to your inventory\n")

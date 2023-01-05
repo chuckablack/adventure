@@ -1,13 +1,15 @@
-import keywords
+from keywords import General
 from replies import snarky_replies
+from world.items import items
 
 
 def print_location_info(location):
 
     print("\n--------------------\n")
-    print(location["description"])
+    print(location[General.DESCRIPTION])
+    print(location[General.LOOK])
     print("\nItems in this location:")
-    for item in location[keywords.General.ITEMS]:
+    for item in location[General.ITEMS]:
         print(f"--- {item}")
     print("\n--------------------\n")
 
@@ -31,15 +33,15 @@ def look(current_location, command, inventory):
 
         if len(command) == 2:
             item_name = command[1]
-        elif command[1] == keywords.General.AT:
+        elif command[1] == General.AT:
             item_name = command[2]
         else:
             snarky_replies.print_snarky_reply_bad_look_command()
             return
 
         # Make sure we have this item in inventory or in the room
-        if item_name not in current_location[keywords.General.ITEMS] and item_name not in inventory:
+        if item_name not in current_location[General.ITEMS] and item_name not in inventory:
             snarky_replies.print_snarky_reply_dont_have_item(item_name)
             return
 
-        print_item_info(world.items[item_name])
+        print_item_info(items[item_name])

@@ -37,17 +37,17 @@ class Direction:
 
 class Location:
 
-    SCHOOLHOUSE_ENTRY = "main_entry"
+    SCHOOLHOUSE_ENTRY = "schoolhouse-entry"
     FOYER = "foyer"
-    WEST_ENTRY = "west_entry"
-    EAST_ENTRY = "east_entry"
-    BACK_ENTRY = "back_entry"
-    WEST_HALLWAY = "west_hallway"
-    EAST_HALLWAY = "east_hallway"
-    CLASSROOM_ENGLISH = "classroom_english"
-    CLASSROOM_SCIENCE = "classroom_science"
-    CLASSROOM_MATH = "classroom_math"
-    CLASSROOM_ACCOUNTING = "classroom_accounting"
+    WEST_ENTRY = "west-entry"
+    EAST_ENTRY = "east-entry"
+    BACK_ENTRY = "back-entry"
+    WEST_HALLWAY = "west-hallway"
+    EAST_HALLWAY = "east-hallway"
+    CLASSROOM_ENGLISH = "classroom-english"
+    CLASSROOM_SCIENCE = "classroom-science"
+    CLASSROOM_MATH = "classroom-math"
+    CLASSROOM_ACCOUNTING = "classroom-accounting"
 
     FOREST_ENTRY = "forest-entry"
 
@@ -99,6 +99,50 @@ class General:
     DEFAULT_LOCATION = "default-location"
 
 
+class GoWords:
+    GO = "go"
+    MOVE = "move"
+    PROCEED = "proceed"
+    ADVANCE = "advance"
+    WALK = "walk"
+    RUN = "run"
+    TRAVEL = "travel"
+    SHUFFLE = "shuffle"
+    SKIP = "skip"
+    DANCE = "dance"
+    SCOOT = "scoot"
+    MOSEY = "mosey"
+
+
+class TakeWords:
+    TAKE = "take"
+    GRAB = "grab"
+    SNATCH = "snatch"
+    SNAG = "snag"
+    ACQUIRE = "acquire"
+    PICK_UP = "pick-up"
+
+
+class LeaveWords:
+    LEAVE = "leave"
+    DROP = "drop"
+    DUMP = "dump"
+    PUT_DOWN = "put-down"
+
+
+class LookWords:
+    LOOK = "look"
+    DISPLAY = "display"
+    EXAMINE = "examine"
+    STUDY = "study"
+
+
 allowed_actions = [Action.GO, Action.TAKE, Action.LEAVE, Action.USE, Action.LOOK, Action.SHOW]
 allowed_directions = [Direction.NORTH, Direction.SOUTH, Direction.EAST, Direction.WEST]
 allowed_areas = [Area.FOREST, Area.CITY, Area.MOUNTAINS, Area.SCHOOLHOUSE]
+
+
+go_words = [v for k, v in GoWords.__dict__.items() if not k.startswith('__') and not callable(k)]
+take_words = [v for k, v in TakeWords.__dict__.items() if not k.startswith('__') and not callable(k)]
+leave_words = [v for k, v in LeaveWords.__dict__.items() if not k.startswith('__') and not callable(k)]
+look_words = [v for k, v in LookWords.__dict__.items() if not k.startswith('__') and not callable(k)]

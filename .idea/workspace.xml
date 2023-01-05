@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f897a0ca-a531-4372-b334-cc108756c03f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/world/items.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actions/go.py" beforeDir="false" afterPath="$PROJECT_DIR$/actions/go.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/areas.py" beforeDir="false" afterPath="$PROJECT_DIR$/world/areas.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actions/look.py" beforeDir="false" afterPath="$PROJECT_DIR$/actions/look.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actions/show.py" beforeDir="false" afterPath="$PROJECT_DIR$/actions/show.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adventure.py" beforeDir="false" afterPath="$PROJECT_DIR$/adventure.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keywords.py" beforeDir="false" afterPath="$PROJECT_DIR$/keywords.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/take.py" beforeDir="false" afterPath="$PROJECT_DIR$/take.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/world/locations.py" beforeDir="false" afterPath="$PROJECT_DIR$/world/locations.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,15 +37,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/chuck/adventure&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/home/chuck/adventure/world"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/world" />
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -70,14 +75,19 @@
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/adventure.py</url>
-          <line>63</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/actions/go.py</url>
           <line>19</line>
           <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/adventure.py</url>
+          <line>64</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/adventure.py</url>
+          <line>47</line>
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -88,11 +98,5 @@
         </breakpoint>
       </default-breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="PythonConfigurationType">
-        <watch expression="areas" />
-        <watch expression="locations" />
-      </configuration>
-    </watches-manager>
   </component>
 </project>

@@ -25,17 +25,10 @@ def print_help():
     print("--------------------\n")
 
 
-def print_look_info(location):
-
-    print("\n--------------------")
-    print(location["look"])
-    print("--------------------\n")
-
-
 print_help()
 
-location_name = "main_entry"
-current_location = locations["main_entry"]
+location_name = keywords.Location.SCHOOLHOUSE_ENTRY
+current_location = locations[keywords.Location.SCHOOLHOUSE_ENTRY]
 inventory = {}
 show_new_location_info = True
 
@@ -53,24 +46,19 @@ while True:
         exit()
 
     command = command_string.lower().split()
-
     action = command[0]
 
-    if action not in keywords.allowed_actions:
-        snarky_replies.print_snarky_reply_bad_action()
-        continue
-
     # ---- GO action ------------------------------------------------
-    if action == keywords.Action.GO:
+    if action in keywords.go_words:
         show_new_location_info, current_location = go(current_location, command)
         continue
 
     # ---- LOOK action ------------------------------------------------
-    elif action == keywords.Action.LOOK:
+    elif action in keywords.look_words:
         look(current_location, command, inventory)
 
     # ----- TAKE action -----------------------------------------------
-    elif action == keywords.Action.TAKE:
+    elif action in keywords.take_words:
         take(current_location, command, inventory)
 
     # ----- SHOW action -----------------------------------------------
