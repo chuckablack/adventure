@@ -1,4 +1,5 @@
 class Action:
+    HELP = "help"
     GO = "go"
     TAKE = "take"
     LEAVE = "leave"
@@ -138,7 +139,7 @@ class LookWords:
 
 
 allowed_actions = [Action.GO, Action.TAKE, Action.LEAVE, Action.USE, Action.LOOK, Action.SHOW]
-allowed_directions = [Direction.NORTH, Direction.SOUTH, Direction.EAST, Direction.WEST]
+allowed_directions = [Direction.NORTH, Direction.SOUTH, Direction.EAST, Direction.WEST, Direction.UP, Direction.DOWN]
 allowed_areas = [Area.FOREST, Area.CITY, Area.MOUNTAINS, Area.SCHOOLHOUSE]
 
 

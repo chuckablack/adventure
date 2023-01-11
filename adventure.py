@@ -3,29 +3,12 @@ from actions.go import go
 from actions.look import look, print_location_info
 from actions.show import show_inventory
 from take import take
+from actions.help import get_help, print_general_help
 from replies import snarky_replies
 import keywords
 
 
-def print_help():
-
-    print("\n--------------------")
-    print("Adventure commands look like the following: <action> <option>")
-    print(f"    ... where <action> can be one of: {keywords.Action.GO}")
-    print(f"                                      {keywords.Action.USE}")
-    print(f"                                      {keywords.Action.LEAVE}")
-    print(f"                                      {keywords.Action.TAKE}")
-    print(f"                                      {keywords.Action.LOOK}")
-    print("The <option> depends on the <action>. Some examples:")
-    print(f"         {keywords.Action.GO}: north, south, east, west")
-    print(f"         {keywords.Action.TAKE}: <name of item being taken>")
-    print(f"         {keywords.Action.LEAVE}: <name of item being left>")
-    print(f"         {keywords.Action.USE}: <name of item being used>")
-    print("Enjoy, and good luck!")
-    print("--------------------\n")
-
-
-print_help()
+print_general_help()
 
 location_name = keywords.Location.SCHOOLHOUSE_ENTRY
 current_location = locations[keywords.Location.SCHOOLHOUSE_ENTRY]
@@ -65,6 +48,10 @@ while True:
     elif action == keywords.Action.SHOW:
         if len(command) > 1 and command[1] == keywords.General.INVENTORY:
             show_inventory(inventory)
+
+    # ----- HELP action -----------------------------------------------
+    elif action == keywords.Action.HELP:
+        get_help(command)
 
     else:
         print(f"sorry it seems the developer has not implemented the action {action} yet!")
