@@ -18,7 +18,7 @@ show_new_location_info = True
 while True:
 
     if show_new_location_info:
-        print_location_info(current_location)
+        print_location_info(location_name, current_location)
         show_new_location_info = False
 
     command_string = ""
@@ -38,7 +38,7 @@ while True:
 
     # ---- LOOK action ------------------------------------------------
     elif action in keywords.look_words:
-        look(current_location, command, inventory)
+        look(location_name, current_location, command, inventory)
 
     # ----- TAKE action -----------------------------------------------
     elif action in keywords.take_words:

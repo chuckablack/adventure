@@ -1,17 +1,25 @@
-from keywords import General
+from keywords import General, allowed_directions
 from replies import snarky_replies
 from world.items import items
 
 
-def print_location_info(location):
+def print_location_info(location_name, location):
 
-    print("\n--------------------\n")
-    print(location[General.DESCRIPTION])
-    print(location[General.LOOK])
-    print("\nItems in this location:")
-    for item in location[General.ITEMS]:
-        print(f"--- {item}")
-    print("\n--------------------\n")
+    print(f"""
+Location Information:
+    name: {location_name}
+    description: {location[General.DESCRIPTION]}
+    allowed directions: {[d for d in location.keys() if d in allowed_directions]}
+    items: {list(location[General.ITEMS].keys())}
+""")
+
+    # print("\n")
+    # print(location[General.DESCRIPTION])
+    # print(location[General.LOOK])
+    # print("\nItems in this location:")
+    # for item in location[General.ITEMS]:
+    #     print(f"--- {item}")
+    # print("\n--------------------\n")
 
 
 def print_item_info(item):
@@ -21,11 +29,11 @@ def print_item_info(item):
     print("--------------------\n")
 
 
-def look(current_location, command, inventory):
+def look(location_name, current_location, command, inventory):
 
     # If just 'look', print info about the current location
     if len(command) == 1:
-        print_location_info(current_location)
+        print_location_info(location_name, current_location)
         return
 
     # Otherwise, look at requested item, which must be in inventory or in the current location

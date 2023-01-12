@@ -142,7 +142,6 @@ allowed_actions = [Action.GO, Action.TAKE, Action.LEAVE, Action.USE, Action.LOOK
 allowed_directions = [Direction.NORTH, Direction.SOUTH, Direction.EAST, Direction.WEST, Direction.UP, Direction.DOWN]
 allowed_areas = [Area.FOREST, Area.CITY, Area.MOUNTAINS, Area.SCHOOLHOUSE]
 
-
 go_words = [v for k, v in GoWords.__dict__.items() if not k.startswith('__') and not callable(k)]
 take_words = [v for k, v in TakeWords.__dict__.items() if not k.startswith('__') and not callable(k)]
 leave_words = [v for k, v in LeaveWords.__dict__.items() if not k.startswith('__') and not callable(k)]
