@@ -11,14 +11,13 @@ import keywords
 print_general_help()
 
 location_name = keywords.Location.SCHOOLHOUSE_ENTRY
-current_location = locations[keywords.Location.SCHOOLHOUSE_ENTRY]
 inventory = {}
 show_new_location_info = True
 
 while True:
 
     if show_new_location_info:
-        print_location_info(location_name, current_location)
+        print_location_info(location_name, locations[location_name])
         show_new_location_info = False
 
     command_string = ""
@@ -33,16 +32,17 @@ while True:
 
     # ---- GO action ------------------------------------------------
     if action in keywords.go_words:
-        show_new_location_info, current_location = go(current_location, command)
+        show_new_location_info, new_location_name = go(location_name, command)
+        location_name = new_location_name
         continue
 
     # ---- LOOK action ------------------------------------------------
     elif action in keywords.look_words:
-        look(location_name, current_location, command, inventory)
+        look(location_name, command, inventory)
 
     # ----- TAKE action -----------------------------------------------
     elif action in keywords.take_words:
-        take(current_location, command, inventory)
+        take(locations[location_name], command, inventory)
 
     # ----- SHOW action -----------------------------------------------
     elif action == keywords.Action.SHOW:

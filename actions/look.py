@@ -1,4 +1,5 @@
 from keywords import General, allowed_directions
+from world.locations import locations
 from replies import snarky_replies
 from world.items import items
 
@@ -29,8 +30,9 @@ def print_item_info(item):
     print("--------------------\n")
 
 
-def look(location_name, current_location, command, inventory):
+def look(location_name, command, inventory):
 
+    current_location = locations[location_name]
     # If just 'look', print info about the current location
     if len(command) == 1:
         print_location_info(location_name, current_location)

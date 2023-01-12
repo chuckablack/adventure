@@ -1,44 +1,44 @@
 from world.locations import locations
 from world.areas import areas
 from replies import snarky_replies
-import keywords
+from keywords import General, allowed_directions, allowed_areas
 
 
-def go(current_location, command):
+def go(location_name, command):
 
+    current_location = locations[location_name]
     if len(command) == 1:
-        snarky_replies.print_snarky_reply_bad_direction_name()
-        return False, current_location
+        print(f"allowed directions: {[d for d in current_location.keys() if d in allowed_directions]}")
+        return False, location_name
 
     # ----- Handle 'go to <area>' -------------------------------------
-    if command[1] == keywords.General.TO:
+    if command[1] == General.TO:
 
-        if len(command) == 2 or command[2] not in keywords.allowed_areas:
+        if len(command) == 2 or command[2] not in allowed_areas:
             snarky_replies.print_snarky_reply_bad_go_to_area()
-            return False, current_location
+            return False, location_name
 
         area_name = command[2]
-        new_location = areas[area_name][keywords.General.DEFAULT_LOCATION]
-        if new_location not in locations:
-            snarky_replies.print_snarky_reply_bad_world(new_location)
-            return False, current_location
+        new_location_name = areas[area_name][General.DEFAULT_LOCATION]
+        if new_location_name not in locations:
+            snarky_replies.print_snarky_reply_bad_world(new_location_name)
+            return False, location_name
 
-        return True, locations[new_location]
+        return True, new_location_name
 
     # ----- Handle 'go <direction>' -----------------------------------
     direction = command[1]
-    if direction not in keywords.allowed_directions:
+    if direction not in allowed_directions:
         snarky_replies.print_snarky_reply_bad_direction_name()
-        return False, current_location
+        return False, location_name
 
     if direction not in current_location:
         snarky_replies.print_snarky_reply_bad_direction()
-        return False, current_location
+        return False, location_name
 
-    new_location = current_location[direction]
-    if new_location not in locations:
-        snarky_replies.print_snarky_reply_bad_world(new_location)
-        return False, current_location
+    new_location_name = current_location[direction]
+    if new_location_name not in locations:
+        snarky_replies.print_snarky_reply_bad_world(new_location_name)
+        return False, location_name
 
-    return True, locations[new_location]
-
+    return True, new_location_name
